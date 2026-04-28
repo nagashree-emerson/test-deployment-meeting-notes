@@ -1,0 +1,16 @@
+{
+  "name": "Integration - Summarize Meeting File Upload API",
+  "description": "Tests the /summarize_file endpoint with a valid .pdf file, summary_length, and user_email.",
+  "test_type": "integration",
+  "input": "POST to /summarize_file with UploadFile (.pdf), summary_length, and user_email.",
+  "output": "HTTP 200 with FileUploadResponse (success=True, summary present).",
+  "success_criteria": [
+    "HTTP status code is 200",
+    "response JSON contains 'success': true",
+    "response JSON contains non-empty 'summary'"
+  ],
+  "error_scenarios": [
+    "FileExtractionError due to unsupported file",
+    "ValidationError for missing fields"
+  ]
+}

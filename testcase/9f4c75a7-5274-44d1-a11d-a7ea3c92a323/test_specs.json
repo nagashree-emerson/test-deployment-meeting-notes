@@ -1,0 +1,14 @@
+{
+  "name": "Security - Data Encryption in SecurityManager",
+  "description": "Checks that SecurityManager.encrypt_data returns encrypted bytes for valid input.",
+  "test_type": "security",
+  "input": "Call SecurityManager.encrypt_data with a sample string.",
+  "output": "Encrypted bytes output (not equal to input string).",
+  "success_criteria": [
+    "Output is of type bytes",
+    "Output is not equal to input.encode('utf-8') if encryption key is set"
+  ],
+  "error_scenarios": [
+    "Encryption key is missing, falls back to plain bytes"
+  ]
+}

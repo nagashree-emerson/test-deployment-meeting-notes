@@ -1,0 +1,16 @@
+{
+  "name": "Functional - Answer Follow-up Question with Valid Input",
+  "description": "Checks that MeetingNotesSummarizerAgent.answer_followup returns a valid answer for a well-formed follow-up question and transcript.",
+  "test_type": "functional",
+  "input": "FollowupQuestionRequest with valid transcript_text and question.",
+  "output": "FollowupQuestionResponse with success=True, answer populated, error=None.",
+  "success_criteria": [
+    "response.success is True",
+    "response.answer is not None and is a string",
+    "response.error is None"
+  ],
+  "error_scenarios": [
+    "LLMService.answer_question returns FALLBACK_RESPONSE",
+    "InputValidationError raised"
+  ]
+}

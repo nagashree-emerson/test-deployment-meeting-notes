@@ -1,0 +1,14 @@
+{
+  "name": "Performance - Summarize Meeting Response Time",
+  "description": "Measures the response time of the /summarize endpoint with a medium-length transcript.",
+  "test_type": "performance",
+  "input": "POST /summarize with a transcript of ~1000 words and valid user_email.",
+  "output": "SummarizeMeetingResponse with timing metrics.",
+  "success_criteria": [
+    "response.status_code == 200",
+    "Total response time is less than 5 seconds (assuming LLM latency is mocked or stubbed)"
+  ],
+  "error_scenarios": [
+    "Timeout if LLMService is slow"
+  ]
+}

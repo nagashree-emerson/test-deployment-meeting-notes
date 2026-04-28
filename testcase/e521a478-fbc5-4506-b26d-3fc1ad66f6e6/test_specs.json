@@ -1,0 +1,15 @@
+{
+  "name": "Security - Invalid Email Address Rejected",
+  "description": "Ensures that endpoints requiring user_email reject invalid email addresses.",
+  "test_type": "security",
+  "input": "POST /summarize with an invalid user_email (e.g., 'not-an-email').",
+  "output": "SummarizeMeetingResponse with success=False, error message indicating invalid email.",
+  "success_criteria": [
+    "response.status_code == 200",
+    "response.json()['success'] is False",
+    "response.json()['error'] contains 'Invalid email address'"
+  ],
+  "error_scenarios": [
+    "ValidationError is raised and handled"
+  ]
+}

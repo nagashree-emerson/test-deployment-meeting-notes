@@ -1,0 +1,16 @@
+{
+  "name": "Performance - Summarize Meeting Large Transcript",
+  "description": "Measures response time for MeetingNotesSummarizerAgent.summarize_meeting with a large but valid transcript.",
+  "test_type": "performance",
+  "input": "SummarizeMeetingRequest with transcript_text near 50,000 characters, valid email.",
+  "output": "SummarizeMeetingResponse with summary returned within acceptable latency.",
+  "success_criteria": [
+    "response.success is True",
+    "response.summary is not None",
+    "Total processing time < 5 seconds"
+  ],
+  "error_scenarios": [
+    "Timeouts in LLMService.generate_summary",
+    "InputValidationError for exceeding max length"
+  ]
+}

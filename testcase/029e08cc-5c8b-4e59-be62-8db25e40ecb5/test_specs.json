@@ -1,0 +1,15 @@
+{
+  "name": "Security - File Upload with Unsupported Format",
+  "description": "Verifies that uploading a file with an unsupported extension is rejected.",
+  "test_type": "security",
+  "input": "POST /summarize_file with a .exe or .jpg file, summary_length, and user_email.",
+  "output": "FileUploadResponse with success=False, error message indicating unsupported file format.",
+  "success_criteria": [
+    "response.status_code == 200",
+    "response.json()['success'] is False",
+    "response.json()['error'] contains 'Unsupported file format'"
+  ],
+  "error_scenarios": [
+    "FileExtractionError is raised and handled"
+  ]
+}

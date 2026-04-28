@@ -1,0 +1,17 @@
+{
+  "name": "Functional - Summarize Meeting with Valid Transcript",
+  "description": "Validates that MeetingNotesSummarizerAgent.summarize_meeting returns a successful summary for a valid transcript and email.",
+  "test_type": "functional",
+  "input": "SummarizeMeetingRequest with a valid transcript_text (length > 10), summary_length='full', and valid user_email.",
+  "output": "SummarizeMeetingResponse with success=True, summary and structured_summary populated, error=None.",
+  "success_criteria": [
+    "response.success is True",
+    "response.summary is not None and is a string",
+    "response.structured_summary is not None and is a dict",
+    "response.error is None"
+  ],
+  "error_scenarios": [
+    "LLMService.generate_summary returns FALLBACK_RESPONSE",
+    "InputValidationError raised"
+  ]
+}

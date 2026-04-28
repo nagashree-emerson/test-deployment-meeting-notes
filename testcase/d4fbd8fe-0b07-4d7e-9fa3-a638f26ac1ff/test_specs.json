@@ -1,0 +1,15 @@
+{
+  "name": "Security - Consent Enforcement Before Email Send",
+  "description": "Tests ComplianceManager.validate_consent blocks email sending if user_confirmation is False.",
+  "test_type": "security",
+  "input": "Call ComplianceManager.validate_consent with user_confirmation=False.",
+  "output": "PermissionError is raised.",
+  "success_criteria": [
+    "PermissionError is raised",
+    "No email is sent"
+  ],
+  "error_scenarios": [
+    "Email sent without consent",
+    "No error raised"
+  ]
+}

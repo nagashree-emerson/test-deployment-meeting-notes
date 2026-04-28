@@ -1,0 +1,15 @@
+{
+  "name": "Performance - File Extraction Speed",
+  "description": "Tests InputHandler.extract_text performance for a large .docx file.",
+  "test_type": "performance",
+  "input": "UploadFile containing a large .docx file (many paragraphs).",
+  "output": "Extracted text returned within acceptable time.",
+  "success_criteria": [
+    "Text extraction completes successfully",
+    "Extraction time < 2 seconds"
+  ],
+  "error_scenarios": [
+    "FileExtractionError due to file size",
+    "Timeout"
+  ]
+}

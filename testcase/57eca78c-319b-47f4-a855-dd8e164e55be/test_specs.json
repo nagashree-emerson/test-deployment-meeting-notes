@@ -1,0 +1,18 @@
+{
+  "name": "Functional - Summarize Meeting File Upload Success",
+  "description": "Ensures /summarize_file endpoint processes a valid .txt file and returns a summary.",
+  "test_type": "functional",
+  "input": "POST /summarize_file with a valid .txt UploadFile, summary_length='paragraph', and valid user_email.",
+  "output": "FileUploadResponse with success=True, summary and structured_summary populated, error=None.",
+  "success_criteria": [
+    "response.status_code == 200",
+    "response.json()['success'] is True",
+    "response.json()['summary'] is not None",
+    "response.json()['structured_summary'] is not None",
+    "response.json()['error'] is None"
+  ],
+  "error_scenarios": [
+    "FileExtractionError if file is empty or unsupported",
+    "ValidationError if email is invalid"
+  ]
+}

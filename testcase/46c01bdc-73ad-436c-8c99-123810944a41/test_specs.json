@@ -1,0 +1,15 @@
+{
+  "name": "Performance - LLMService.generate_summary Throughput",
+  "description": "Measures average latency of LLMService.generate_summary over multiple rapid requests.",
+  "test_type": "performance",
+  "input": "Multiple concurrent calls to generate_summary with valid prompts and transcripts.",
+  "output": "All responses returned within expected average latency.",
+  "success_criteria": [
+    "All responses are not None",
+    "Average response time < 4 seconds"
+  ],
+  "error_scenarios": [
+    "LLM API rate limiting",
+    "Timeouts"
+  ]
+}

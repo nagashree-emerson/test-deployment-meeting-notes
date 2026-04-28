@@ -1,0 +1,15 @@
+{
+  "name": "Security - Data Encryption with SecurityManager",
+  "description": "Verifies SecurityManager.encrypt_data encrypts data and can handle missing encryption key.",
+  "test_type": "security",
+  "input": "Call SecurityManager.encrypt_data with a sample string, with and without a valid Fernet key.",
+  "output": "Returns encrypted bytes if key exists, else returns UTF-8 bytes.",
+  "success_criteria": [
+    "Output is bytes",
+    "If key is present, output != input.encode('utf-8')"
+  ],
+  "error_scenarios": [
+    "Exception raised during encryption",
+    "Output is not bytes"
+  ]
+}

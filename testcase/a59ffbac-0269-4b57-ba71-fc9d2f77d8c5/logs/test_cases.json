@@ -1,0 +1,47 @@
+[
+  {
+    "id": "test_1",
+    "name": "test_agent.py::test_unit_summarize_meeting_happy_path",
+    "description": "Test: test_agent.py::test_unit_summarize_meeting_happy_path",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  },
+  {
+    "id": "test_2",
+    "name": "test_agent.py::test_unit_summarize_meeting_error_handling",
+    "description": "Test: test_agent.py::test_unit_summarize_meeting_error_handling",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  },
+  {
+    "id": "test_3",
+    "name": "test_agent.py::test_integration_workflow",
+    "description": "Test: test_agent.py::test_integration_workflow",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  },
+  {
+    "id": "test_4",
+    "name": "test_agent.py::test_performance_throughput",
+    "description": "Test: test_agent.py::test_performance_throughput",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  },
+  {
+    "id": "test_5",
+    "name": "test_agent.py::test_edge_case_empty_input",
+    "description": "Test: test_agent.py::test_edge_case_empty_input",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  }
+]

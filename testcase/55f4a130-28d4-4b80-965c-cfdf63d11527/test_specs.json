@@ -1,0 +1,16 @@
+{
+  "name": "Integration - Follow-up Question API",
+  "description": "Tests the /followup endpoint with valid transcript and question, ensuring the answer is returned.",
+  "test_type": "integration",
+  "input": "POST to /followup with valid FollowupQuestionRequest JSON.",
+  "output": "HTTP 200 with FollowupQuestionResponse (success=True, answer present).",
+  "success_criteria": [
+    "HTTP status code is 200",
+    "response JSON contains 'success': true",
+    "response JSON contains non-empty 'answer'"
+  ],
+  "error_scenarios": [
+    "ValidationError for missing/invalid fields",
+    "LLMService failure"
+  ]
+}

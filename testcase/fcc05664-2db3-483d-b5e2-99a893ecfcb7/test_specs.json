@@ -1,0 +1,17 @@
+{
+  "name": "Integration - Follow-up Question End-to-End",
+  "description": "Tests the /followup endpoint from input validation through LLM answer and output formatting.",
+  "test_type": "integration",
+  "input": "POST /followup with a valid transcript and question.",
+  "output": "FollowupQuestionResponse with answer field populated.",
+  "success_criteria": [
+    "Preprocessor.process_text is called",
+    "LLMService.answer_question is called",
+    "sanitize_llm_output is called",
+    "Response contains answer"
+  ],
+  "error_scenarios": [
+    "LLMService returns FALLBACK_RESPONSE",
+    "ValidationError if question is too long"
+  ]
+}

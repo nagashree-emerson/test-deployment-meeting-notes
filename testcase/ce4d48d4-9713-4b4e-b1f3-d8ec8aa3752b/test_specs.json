@@ -1,0 +1,14 @@
+{
+  "name": "Security - Email Validation Enforcement",
+  "description": "Ensures SummarizeMeetingRequest and FileUploadRequest reject invalid email addresses.",
+  "test_type": "security",
+  "input": "SummarizeMeetingRequest/FileUploadRequest with malformed user_email (e.g., 'not-an-email').",
+  "output": "ValidationError raised, error message indicates invalid email.",
+  "success_criteria": [
+    "ValidationError is raised",
+    "Error message contains 'Invalid email address'"
+  ],
+  "error_scenarios": [
+    "No error raised for invalid email"
+  ]
+}

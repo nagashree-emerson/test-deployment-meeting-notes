@@ -1,0 +1,18 @@
+{
+  "name": "Integration - File Upload to Summary Email Formatting",
+  "description": "Verifies that uploading a .pdf file triggers extraction, summarization, and formatting pipeline.",
+  "test_type": "integration",
+  "input": "POST /summarize_file with a valid .pdf UploadFile, summary_length, and user_email.",
+  "output": "FileUploadResponse with summary and structured_summary fields.",
+  "success_criteria": [
+    "InputHandler.extract_text is called for .pdf",
+    "Preprocessor.process_text is called",
+    "LLMService.generate_summary is called",
+    "OutputFormatter.format_summary and format_email_body are called",
+    "Response contains summary and structured_summary"
+  ],
+  "error_scenarios": [
+    "FileExtractionError if PDF is empty or corrupt",
+    "InputValidationError if extracted text is too short"
+  ]
+}

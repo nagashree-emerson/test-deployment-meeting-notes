@@ -1,0 +1,15 @@
+{
+  "name": "Performance - File Upload Large PDF",
+  "description": "Tests the /summarize_file endpoint with a large but valid PDF file (close to 50,000 characters).",
+  "test_type": "performance",
+  "input": "POST /summarize_file with a large .pdf UploadFile, summary_length, and user_email.",
+  "output": "FileUploadResponse with summary and structured_summary.",
+  "success_criteria": [
+    "response.status_code == 200",
+    "File extraction and summarization complete within 10 seconds (assuming LLM is stubbed/mocked)"
+  ],
+  "error_scenarios": [
+    "FileExtractionError if file is too large or corrupt",
+    "Timeout if processing is too slow"
+  ]
+}

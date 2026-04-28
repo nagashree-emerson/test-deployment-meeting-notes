@@ -1,0 +1,16 @@
+{
+  "name": "Performance - Follow-up Question High Load",
+  "description": "Simulates multiple concurrent requests to /followup to ensure the endpoint handles load.",
+  "test_type": "performance",
+  "input": "10+ concurrent POST requests to /followup with valid transcript and question.",
+  "output": "All responses are returned successfully within acceptable time frame.",
+  "success_criteria": [
+    "All responses.status_code == 200",
+    "No requests fail due to server overload",
+    "Average response time remains under 5 seconds (with LLM mocked)"
+  ],
+  "error_scenarios": [
+    "Server returns 500 due to overload",
+    "Requests timeout"
+  ]
+}

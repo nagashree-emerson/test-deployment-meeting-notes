@@ -1,0 +1,20 @@
+[
+  {
+    "id": "test_1",
+    "name": "test_agent.py::test_unit_encrypt_data_happy_path",
+    "description": "Test: test_agent.py::test_unit_encrypt_data_happy_path",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  },
+  {
+    "id": "test_2",
+    "name": "test_agent.py::test_unit_encrypt_data_no_key_fallback",
+    "description": "Test: test_agent.py::test_unit_encrypt_data_no_key_fallback",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  }
+]

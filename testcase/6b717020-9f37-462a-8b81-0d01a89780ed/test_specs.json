@@ -1,0 +1,16 @@
+{
+  "name": "Integration - Summarize Meeting API End-to-End",
+  "description": "Tests the /summarize endpoint with a valid SummarizeMeetingRequest, ensuring all components interact correctly.",
+  "test_type": "integration",
+  "input": "POST to /summarize with valid SummarizeMeetingRequest JSON.",
+  "output": "HTTP 200 with SummarizeMeetingResponse (success=True, summary present).",
+  "success_criteria": [
+    "HTTP status code is 200",
+    "response JSON contains 'success': true",
+    "response JSON contains non-empty 'summary'"
+  ],
+  "error_scenarios": [
+    "ValidationError due to malformed request",
+    "LLMService failure"
+  ]
+}

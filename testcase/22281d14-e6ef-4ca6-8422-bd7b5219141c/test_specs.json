@@ -1,0 +1,17 @@
+{
+  "name": "Functional - Summarize Meeting from File Upload",
+  "description": "Ensures MeetingNotesSummarizerAgent.summarize_meeting_file processes a valid .txt file and returns a summary.",
+  "test_type": "functional",
+  "input": "UploadFile containing valid .txt content, summary_length='paragraph', user_email valid.",
+  "output": "FileUploadResponse with success=True, summary and structured_summary populated, error=None.",
+  "success_criteria": [
+    "response.success is True",
+    "response.summary is not None",
+    "response.structured_summary is not None",
+    "response.error is None"
+  ],
+  "error_scenarios": [
+    "FileExtractionError raised",
+    "InputValidationError raised"
+  ]
+}

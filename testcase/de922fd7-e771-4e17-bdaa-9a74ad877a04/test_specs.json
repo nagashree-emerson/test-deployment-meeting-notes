@@ -1,0 +1,17 @@
+{
+  "name": "Functional - Follow-up Question with Valid Input",
+  "description": "Checks that the /followup endpoint answers a valid question about a provided transcript.",
+  "test_type": "functional",
+  "input": "POST /followup with FollowupQuestionRequest containing a valid transcript_text and question.",
+  "output": "FollowupQuestionResponse with success=True, answer populated, error=None.",
+  "success_criteria": [
+    "response.status_code == 200",
+    "response.json()['success'] is True",
+    "response.json()['answer'] is not None",
+    "response.json()['error'] is None"
+  ],
+  "error_scenarios": [
+    "ValidationError if question is missing",
+    "InputValidationError if transcript is missing"
+  ]
+}
